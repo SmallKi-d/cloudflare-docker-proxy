@@ -48,12 +48,7 @@ async function handleRequest(request) {
   const isDockerHub = upstream == dockerHub;
   const authorization = request.headers.get("Authorization");
   if (url.pathname === "/") {
-    return new Response(DOCS, {
-      status: 200,
-      headers: {
-        "content-type": "text/html"
-      }
-    });
+    return window.location.href = 'https://blog.kclub.tech';
   }
   if (url.pathname == "/v2/") {
     const newUrl = new URL(upstream + "/v2/");
